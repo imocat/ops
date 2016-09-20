@@ -1,0 +1,17 @@
+{
+  "name": "ops",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.0.1"
+  },
+  "devDependencies": {
+    "express": "^4.14.0",
+    "restify": "^4.1.1"
+  }
+}
