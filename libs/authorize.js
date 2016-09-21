@@ -7,8 +7,12 @@ var encrypt = require('./encrypt');
 
 module.exports = function(req, res, next) {
 
-	var APP_TOKEN_EXPIRE = process.env.APP_TOKEN_EXPIRE;
+	var APP_TOKEN_EXPIRE = parseInt(process.env.APP_TOKEN_EXPIRE);
 	var APP_KEY = process.env.APP_KEY;
+
+	if (isNaN(APP_TOKEN_EXPIRE) || APP_TOKEN_EXPIRE <= 0) {
+		APP_TOKEN_EXPIRE = 30;
+	}
 
 	// TOKEN 验证
 	var appToken = req.query.token || '';
