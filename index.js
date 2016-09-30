@@ -18,7 +18,7 @@ module.exports = function(app) {
 	 * @param  {[type]} res) {		res.send({			id: process.env.APP_ID,			name: os.hostname(),			version: process.env.APP_VERSION || '',			status: appStatus.status || 'running'		});	} [description]
 	 * @return {[type]}      [description]
 	 */
-	app.get('/__ops/ping', function onPing(req, res) {
+	app.get('/ops/ping', function onPing(req, res) {
 		res.send({
 			id: process.env.APP_ID,
 			name: os.hostname(),
@@ -33,7 +33,7 @@ module.exports = function(app) {
 	 * @param  {String} res) {		appStatus.status [description]
 	 * @return {[type]}      [description]
 	 */
-	app.get('/__ops/start', authorize, function onStart(req, res) {
+	app.get('/ops/start', authorize, function onStart(req, res) {
 		appStatus.status = 'running';
 
 		res.send({
@@ -47,7 +47,7 @@ module.exports = function(app) {
 	 * @param  {String} res) {		appStatus.status [description]
 	 * @return {[type]}      [description]
 	 */
-	app.get('/__ops/stop', authorize, function(req, res) {
+	app.get('/ops/stop', authorize, function(req, res) {
 
 		appStatus.status = 'stop';
 
