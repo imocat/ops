@@ -16,7 +16,7 @@ module.exports = function(app) {
 			id: process.env.APP_ID,
 			name: os.hostname(),
 			version: process.env.APP_VERSION || '',
-			status: appStatus.status || 'running'
+			status: 'running'
 		});
 	});
 
@@ -31,7 +31,7 @@ module.exports = function(app) {
 			id: process.env.APP_ID,
 			name: os.hostname(),
 			version: process.env.APP_VERSION || '',
-			status: appStatus.status || 'running'
+			status: 'running'
 		});
 	});
 
